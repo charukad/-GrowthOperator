@@ -20,6 +20,9 @@ class Settings(BaseSettings):
     SECRET_KEY: str = "secret-key-change-me"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 8 # 8 days
 
+    # Redis
+    REDIS_URL: str = "redis://localhost:6381/0"
+
     @property
     def async_database_url(self) -> str:
         return f"postgresql+asyncpg://{self.POSTGRES_USER}:{self.POSTGRES_PASSWORD}@{self.POSTGRES_SERVER}:{self.POSTGRES_PORT}/{self.POSTGRES_DB}"
