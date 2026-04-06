@@ -1,30 +1,34 @@
 [project]
-name = "growthoperator-api"
+name = "growthoperator-worker"
 version = "0.1.0"
-description = "API for GrowthOperator"
+description = "Background worker for GrowthOperator"
 authors = [
     {name = "System", email = "system@example.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.10,<4.0"
 dependencies = [
-    "fastapi",
-    "uvicorn[standard]",
-    "sqlalchemy",
-    "alembic",
+    "celery",
+    "redis",
+    "playwright",
+    "requests",
+    "beautifulsoup4",
     "pydantic",
     "pydantic-settings",
+    "sqlalchemy",
     "asyncpg",
+    "motor",
+    "openai",
+    "google-generativeai",
     "loguru",
-    "python-dotenv",
-    "psycopg2-binary"
+    "python-dotenv"
 ]
 
 [tool.poetry]
 package-mode = false
-name = "growthoperator-api"
+name = "growthoperator-worker"
 version = "0.1.0"
-description = "API for GrowthOperator"
+description = "Background worker for GrowthOperator"
 authors = ["System <system@example.com>"]
 readme = "README.md"
 
@@ -34,11 +38,3 @@ python = ">=3.10,<4.0"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-
-[dependency-groups]
-dev = [
-    "pytest (>=9.0.2,<10.0.0)",
-    "ruff (>=0.15.9,<0.16.0)",
-    "mypy (>=1.20.0,<2.0.0)",
-    "httpx (>=0.28.1,<0.29.0)"
-]
