@@ -1,0 +1,35 @@
+[project]
+name = "growthoperator-api"
+version = "0.1.0"
+description = "API for GrowthOperator"
+authors = [
+    {name = "System", email = "system@example.com"}
+]
+readme = "README.md"
+requires-python = ">=3.10,<4.0"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "sqlalchemy",
+    "alembic",
+    "pydantic",
+    "pydantic-settings",
+    "asyncpg",
+    "loguru",
+    "python-dotenv",
+    "psycopg2-binary"
+]
+
+[tool.poetry]
+name = "growthoperator-api"
+version = "0.1.0"
+description = "API for GrowthOperator"
+authors = ["System <system@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<4.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
